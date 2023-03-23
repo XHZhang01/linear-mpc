@@ -1,0 +1,6 @@
+<?xml version="1.0"?>
+<launch>
+	<include file="$(find mav_ekf)/launch/s550.launch"/>
+	<include file="$(find mpc_ros)/launch/autopilot_S550.launch"/>
+</launch>
+

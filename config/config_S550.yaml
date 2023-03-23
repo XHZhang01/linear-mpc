@@ -1,0 +1,54 @@
+autopilot_parameters:
+ Ts: 0.025              # Sampling time in seconds. (1./Ts) should match the odometry rate.
+ take_off_height: 1.4   # Fixed height in [m] for the take off setpoint
+ take_off_velocity: 0.2 # velocity in [m/s] used in the take off trajectory
+ landing_height: -0.5   # Fixed height in [m] for the landing setpoint.
+ landing_velocity: 0.2  # velocity in [m/s] used in the landing trajectory.
+ home_position: [-0.9, 0.9, -0.5]
+ return_home_height: 1.4       # Fixed Height in [m] used for the return 2 home maneuver.
+ return_home_velocity: 0.2     # velocity in [m/s] used in the return 2 home maneuver.
+
+
+mav_model:
+ theta_dc_gain: 1.0 # DC gain of the closed loop Pitch tf
+ theta_tau: 0.1     # Time constant in [s] of the closed loop pitch tf
+ phi_dc_gain: 1.0   # DC gain of the closed loop roll tf
+ phi_tau: 0.1       # Time constant in [s] of the closed loop roll tf
+
+ x_drag_coeff: 0.01 # Linear drag coeff. along the x axis.
+ y_drag_coeff: 0.01 # Linear drag coeff. along the y axis.
+ z_drag_coeff: 0.01 # Linear drag coeff. along the z axis.
+
+px4thrust_model:
+ total_mass: 1.943              # Total MAV mass in Kg
+ mass_normalised_coeff: 0.21750 # (mass_normalised_coeff * total_mass) should result in collective thrust equal to 1 g.
+ adaptive_thrust: True         # Adapt the thrust sent to px4 based on the voltage
+ cells: 4                       # Number of battery cells
+ battery_model_coeffs: [-0.01584, 0.464]
+ filter_cutoff_freq: 10.0
+
+control_gains:
+ x_gain: 6.0
+ y_gain: 6.0
+ z_gain: 8.0
+
+ x_dot_gain: 1.2
+ y_dot_gain: 1.2
+ z_dot_gain: 1.5
+
+ theta_gain: 0.25
+ phi_gain: 0.25
+
+ theta_ref_gain: 2.9
+ phi_ref_gain: 2.9
+ thrust_ref_gain: 2.5
+
+box_constraints:
+ theta_min: -25.0  # Pitch min in [deg]
+ theta_max: 25.0   # Pitch max in [deg]
+
+ phi_min: -25.0    # Roll min in [deg]
+ phi_max: 25.0     # Roll max in [deg]
+
+ thrust_min: -0.8  # Thrust min in [g]
+ thrust_max: 0.8   # Thrust max in [g]

@@ -1,0 +1,6 @@
+<launch>
+  <param name="config_file_autopilot" value="$(find mpc_ros)/config/config_S550.yaml" /> 
+  <node name="mpc_node" pkg="mpc_ros" type="mpc_node" output="screen">
+  <remap from="/mavros/odometry/data" to="/estimated/odometry"/>
+  </node>
+</launch>
