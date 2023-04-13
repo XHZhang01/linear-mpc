@@ -1,10 +1,3 @@
-/* Copyright (C) Imperial College, Smart Robotics Lab - All Rights Reserved
- * Unauthorized copying of this file, via any medium is strictly prohibited
- * Proprietary and confidential
- * Written by Dimos Tzoumanikas <dt214@ic.ac.uk>
- * 2015-2019
- */
-
 #pragma once
 
 #include <atp/Helper.hpp>
